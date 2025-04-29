@@ -5,6 +5,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+//Hellp
   await Hive.initFlutter();
   Hive.registerAdapter(CreatePinAdapter());
   Hive.registerAdapter(StockItemsAdapter());
