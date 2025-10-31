@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:haptic_fone/Stockmange/StockAdd.dart';
+import 'package:haptic_fone/Stockmange/stock_add.dart';
 import 'package:haptic_fone/Stockmange/Stockmagehome.dart';
 import 'package:haptic_fone/Stockmange/stockmangeProfile.dart';
 

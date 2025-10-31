@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:haptic_fone/database/db_stockitems.dart';
@@ -32,9 +31,9 @@ void editdashboard(BuildContext context, int index, Function setState,
   //     }
   //   });
   // }
-  Uint8List? _updatedimage = current.saleimgpath as Uint8List;
+  Uint8List? updatedimage = current.saleimgpath;
 // Pick image and convert to Uint8List
-  Future<void> _editimage() async {
+  Future<void> editimage() async {
     final ImagePicker picker = ImagePicker();
     final XFile? pickedFile =
         await picker.pickImage(source: ImageSource.gallery);
@@ -42,7 +41,7 @@ void editdashboard(BuildContext context, int index, Function setState,
     if (pickedFile != null) {
       Uint8List? imageBytes =
           await pickedFile.readAsBytes(); // Convert XFile to Uint8List
-      _updatedimage = imageBytes; // Assign to your Uint8List variable
+      updatedimage = imageBytes; // Assign to your Uint8List variable
     }
   }
 
@@ -51,13 +50,13 @@ void editdashboard(BuildContext context, int index, Function setState,
       builder: (BuildContext context) {
         return AlertDialog(
           backgroundColor: Colors.white,
-          title: Text("Edit Section"),
+          title: const Text("Edit Section"),
           content: SingleChildScrollView(
             child: Column(
               children: [
                 InkWell(
                   onTap: () {
-                    _editimage();
+                    editimage();
                   },
                   child: Container(
                       decoration: BoxDecoration(
@@ -67,10 +66,10 @@ void editdashboard(BuildContext context, int index, Function setState,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          _updatedimage != null
+                          updatedimage != null
                               ? Expanded(
                                   child: Image.memory(
-                                    _updatedimage!,
+                                    updatedimage!,
                                     width: 250,
                                     height: 140,
                                   ),
@@ -79,9 +78,9 @@ void editdashboard(BuildContext context, int index, Function setState,
                                   children: [
                                     IconButton(
                                         onPressed: () {
-                                          _editimage();
+                                          editimage();
                                         },
-                                        icon: Icon(
+                                        icon: const Icon(
                                           Icons.insert_photo,
                                           size: 50,
                                         )),
@@ -250,7 +249,7 @@ void editdashboard(BuildContext context, int index, Function setState,
                   box.put(
                       stockey,
                       StockItems(
-                          hiveimg: _updatedimage ?? Uint8List(0),
+                          hiveimg: updatedimage ?? Uint8List(0),
                           hivebrand: updatedbrand,
                           hivemodel: modelcontroller.text,
                           hivecolor: colorcontroller.text,

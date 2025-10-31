@@ -1,0 +1,20 @@
+{
+  "buildFiles": [
+    "/Users/mhdsinas/development/flutter/packages/flutter_tools/gradle/src/main/groovy/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/mhdsinas/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/Users/mhdsinas/hapticfone/android/app/.cxx/Debug/6s116m75/arm64-v8a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/mhdsinas/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/Users/mhdsinas/hapticfone/android/app/.cxx/Debug/6s116m75/arm64-v8a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {}
+}

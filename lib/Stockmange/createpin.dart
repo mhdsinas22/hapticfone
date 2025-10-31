@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 class Createpin extends StatefulWidget {
-  Function(Map<String, dynamic>) oncreatepin;
-  Createpin({super.key, required this.oncreatepin});
+  final Function(Map<String, dynamic>) oncreatepin;
+  const Createpin({super.key, required this.oncreatepin});
 
   @override
   State<Createpin> createState() => _CreatepinState();
@@ -26,7 +26,7 @@ class _CreatepinState extends State<Createpin> {
     if (pin.isEmpty) {
       // Show error Snackbar if PIN is empty
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
+        const SnackBar(
           content: Text("Please enter a PIN."),
           duration: Duration(seconds: 2),
           backgroundColor: Colors.red,
@@ -35,7 +35,7 @@ class _CreatepinState extends State<Createpin> {
     } else if (pin.length != 4) {
       // Show error Snackbar if PIN is not 4 digits
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
+        const SnackBar(
           content: Text("PIN must be 4 digits long."),
           duration: Duration(seconds: 2),
           backgroundColor: Colors.red,
@@ -48,13 +48,15 @@ class _CreatepinState extends State<Createpin> {
       widget.oncreatepin({'pin': pin});
 
       // Show success Snackbar
+      // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
+        const SnackBar(
           content: Text("PIN created successfully!"),
           duration: Duration(seconds: 2),
           backgroundColor: Colors.green,
         ),
       );
+      // ignore: use_build_context_synchronously
       Navigator.pop(context); // Go back after saving the PIN
     }
   }
@@ -63,24 +65,27 @@ class _CreatepinState extends State<Createpin> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(backgroundColor: Colors.white, title: Text("Create Pin")),
+      appBar: AppBar(
+          backgroundColor: Colors.white, title: const Text("Create Pin")),
       body: SingleChildScrollView(
         child: Column(
           children: [
             Image.asset("assest/5.png"),
             Padding(
-              padding: EdgeInsets.all(20.0),
+              padding: const EdgeInsets.all(20.0),
               child: TextField(
-                keyboardType: TextInputType.numberWithOptions(),
+                keyboardType: const TextInputType.numberWithOptions(),
                 controller: enterpin,
-                decoration: InputDecoration(hintText: "Enter Pin"),
+                decoration: const InputDecoration(hintText: "Enter Pin"),
               ),
             ),
             ElevatedButton(
-              onPressed: savePin, // Call savePin when the button is pressed
-              child: Text("Save Pin"),
+              onPressed: savePin,
               style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.white, foregroundColor: Colors.black),
+                  backgroundColor: Colors.white,
+                  foregroundColor:
+                      Colors.black), // Call savePin when the button is pressed
+              child: const Text("Save Pin"),
             ),
           ],
         ),

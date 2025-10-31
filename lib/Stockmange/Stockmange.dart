@@ -169,14 +169,14 @@ class _StockmangeState extends State<Stockmange> {
   Widget build(BuildContext context) {
     // Media query for responsiveness
     double screenWidth = MediaQuery.of(context).size.width;
-    double screenHeight = MediaQuery.of(context).size.height;
+    // double screenHeight = MediaQuery.of(context).size.height;
 
     bool isMobile = screenWidth < 600; // Mobile view breakpoint
 
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Text(
+        title: const Text(
           "Stock Management",
           style: TextStyle(color: Colors.black),
         ),
@@ -206,7 +206,7 @@ class _StockmangeState extends State<Stockmange> {
                   ),
                   child: PinCodeTextField(
                     obscuringCharacter: "●",
-                    animationDuration: Duration(seconds: 1),
+                    animationDuration: const Duration(seconds: 1),
                     animationType: AnimationType.scale,
                     errorAnimationController: errorAnimationController,
                     appContext: context,
@@ -226,7 +226,7 @@ class _StockmangeState extends State<Stockmange> {
                     onCompleted: (value) async {
                       if (value.isEmpty) {
                         ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
+                          const SnackBar(
                             content: Text(
                                 "PIN cannot be empty. Please create a PIN."),
                             duration: Duration(seconds: 2),
@@ -236,6 +236,7 @@ class _StockmangeState extends State<Stockmange> {
                       } else {
                         String storedPin = await getStoredPin();
                         if (value == storedPin) {
+                          // ignore: use_build_context_synchronously
                           Navigator.of(context).push(MaterialPageRoute(
                               builder: (context) => StockBottom()));
                         } else {

@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:haptic_fone/database/db_stockitems.dart';
@@ -14,7 +13,7 @@ void editalert(BuildContext context, int index, Function setState,
   final puschaeamount = TextEditingController(text: current.purschaseprice);
   final modelcontroller = TextEditingController(text: current.hivemodel);
   final colorcontroller = TextEditingController(text: current.hivecolor);
-  final Stroagecontoller = TextEditingController(text: current.hivestorage);
+  final stroagecontoller = TextEditingController(text: current.hivestorage);
   final itemcountcontroller =
       TextEditingController(text: current.hiveitemcount);
   final perpricecontroller = TextEditingController(text: current.hiveprice);
@@ -156,7 +155,7 @@ void editalert(BuildContext context, int index, Function setState,
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Textformfiledforadd(
-                    controller1: Stroagecontoller,
+                    controller1: stroagecontoller,
                     hint: "Enter the Storage name",
                   ),
                 ),
@@ -239,7 +238,7 @@ void editalert(BuildContext context, int index, Function setState,
                       hivebrand: updatedbrand,
                       hivemodel: modelcontroller.text,
                       hivecolor: colorcontroller.text,
-                      hivestorage: Stroagecontoller.text,
+                      hivestorage: stroagecontoller.text,
                       hivecondtion: updatedbrand,
                       hiveitemcount: itemcountcontroller.text,
                       hiveprice: perpricecontroller.text);
@@ -257,7 +256,7 @@ void editalert(BuildContext context, int index, Function setState,
                           hivebrand: updatedbrand,
                           hivemodel: modelcontroller.text,
                           hivecolor: colorcontroller.text,
-                          hivestorage: Stroagecontoller.text,
+                          hivestorage: stroagecontoller.text,
                           hivecondtion: updatedcondtion,
                           hiveitemcount: itemcountcontroller.text,
                           hiveprice: perpricecontroller.text,

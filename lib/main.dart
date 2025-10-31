@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:haptic_fone/database/db_stockitems.dart';
 import 'package:haptic_fone/splash/haptic.splash.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'database/db_stockitems.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

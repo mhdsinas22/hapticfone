@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:haptic_fone/database/db_stockitems.dart';
+
+import '../database/db_stockitems.dart';
 
 void dltaalert_Dashborad(BuildContext context, int index,
     List<Saleitems> saleitems, Function fetchitems) {

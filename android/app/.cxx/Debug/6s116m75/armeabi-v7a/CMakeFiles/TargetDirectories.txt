@@ -1,0 +1,2 @@
+/Users/mhdsinas/hapticfone/android/app/.cxx/Debug/6s116m75/armeabi-v7a/CMakeFiles/edit_cache.dir
+/Users/mhdsinas/hapticfone/android/app/.cxx/Debug/6s116m75/armeabi-v7a/CMakeFiles/rebuild_cache.dir
