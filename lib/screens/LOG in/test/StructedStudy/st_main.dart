@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:haptic_fone/database/db_stockitems.dart';
 import 'package:haptic_fone/screens/LOG%20in/test/StructedStudy/sales_revenuce.dart';
-import 'package:haptic_fone/screens/LOG%20in/test/test.dart';
-import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 void main() async {
@@ -14,7 +12,7 @@ void main() async {
   await Hive.openBox<StockItems>("stockitem_box");
   await Hive.openBox<List<dynamic>>("saleadd_box");
   await Hive.openBox<CreateAccount>("Create_Account");
-  runApp(Study());
+  runApp(const Study());
 }
 
 class Study extends StatelessWidget {
@@ -22,7 +20,7 @@ class Study extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: SalesRevenue(),
     );
   }

@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
 
@@ -29,7 +28,7 @@ class SaleItemCard extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: imgpath.isNotEmpty
                 ? Image.memory(
-                    imgpath ?? Uint8List(0),
+                    imgpath,
                     width: 100,
                     height: 100,
                   )

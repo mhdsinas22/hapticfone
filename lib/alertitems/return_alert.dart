@@ -6,8 +6,8 @@ void returnAlert(BuildContext context) {
       builder: (BuildContext context) {
         return AlertDialog(
           backgroundColor: Colors.white,
-          title: Text("Return "),
-          content: Center(
+          title: const Text("Return "),
+          content: const Center(
               child: Text(
             "No Return",
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
@@ -17,10 +17,10 @@ void returnAlert(BuildContext context) {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text("Cancel"),
               style: ElevatedButton.styleFrom(
                   foregroundColor: Colors.white,
-                  backgroundColor: Color(0xFF77B60B)),
+                  backgroundColor: const Color(0xFF77B60B)),
+              child: const Text("Cancel"),
             ),
           ],
         );

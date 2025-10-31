@@ -9,7 +9,7 @@ import 'package:haptic_fone/screens/HOME/serach_filed.dart';
 import 'package:hive/hive.dart';
 
 class Home extends StatefulWidget {
-  Home({
+  const Home({
     super.key,
   });
 
@@ -53,7 +53,6 @@ class _HomeState extends State<Home> {
   @override
   void initState() {
     _notificationService.initialize();
-    // TODO: implement initState
     super.initState();
     fetchhomedata();
     accountfetchdat();
@@ -67,6 +66,7 @@ class _HomeState extends State<Home> {
     });
   }
 
+  @override
   Widget build(BuildContext context) {
     // Define screen width and height
     double screenWidth = MediaQuery.of(context).size.width;

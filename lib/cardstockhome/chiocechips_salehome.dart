@@ -22,7 +22,7 @@ class _HomeChipState extends State<HomeChip> {
   List<String> filteredCategories = [];
 
   // Controller for the search bar
-  TextEditingController _searchController = TextEditingController();
+  final TextEditingController _searchController = TextEditingController();
 
   @override
   void initState() {
@@ -32,15 +32,15 @@ class _HomeChipState extends State<HomeChip> {
   }
 
   // Function to filter categories based on the search query
-  void _filterCategories(String query) {
-    setState(() {
-      // Filter categories that contain the search query
-      filteredCategories = widget.categorys
-          .where((category) =>
-              category.toLowerCase().contains(query.toLowerCase()))
-          .toList();
-    });
-  }
+  // void _filterCategories(String query) {
+  //   setState(() {
+  //     // Filter categories that contain the search query
+  //     filteredCategories = widget.categorys
+  //         .where((category) =>
+  //             category.toLowerCase().contains(query.toLowerCase()))
+  //         .toList();
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {

@@ -15,19 +15,19 @@ class Notbrand extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: width,
       height: height,
       child: ElevatedButton(
         onPressed: () {},
+        style: ElevatedButton.styleFrom(
+          side: const BorderSide(),
+          backgroundColor: Colors.white,
+          foregroundColor: Colors.black,
+        ),
         child: Text(
           brand,
           style: TextStyle(fontSize: fontsize, fontWeight: FontWeight.bold),
-        ),
-        style: ElevatedButton.styleFrom(
-          side: BorderSide(),
-          backgroundColor: Colors.white,
-          foregroundColor: Colors.black,
         ),
       ),
     );

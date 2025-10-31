@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:haptic_fone/core/const/appcolors.dart';
 import 'package:haptic_fone/login_page/login_screen.dart';
 
 void alertbox1(BuildContext context) {
@@ -7,30 +8,30 @@ void alertbox1(BuildContext context) {
       builder: (BuildContext context) {
         return AlertDialog(
           backgroundColor: Colors.white,
-          iconColor: Color(0xFF77B60B),
-          title: Text(
+          iconColor: Appcolors.limegreen,
+          title: const Text(
             "Are you sure",
-            style: TextStyle(color: Color(0xFF77B60B)),
+            style: TextStyle(color: Appcolors.limegreen),
           ),
           actions: [
             ElevatedButton(
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: Text("Cancel"),
               style: ElevatedButton.styleFrom(
                   foregroundColor: Colors.white,
-                  backgroundColor: Color(0xFF77B60B)),
+                  backgroundColor: Appcolors.limegreen),
+              child: const Text("Cancel"),
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushReplacement(
-                    context, MaterialPageRoute(builder: (context) => Login()));
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (context) => const Login()));
               },
-              child: Text("Sure"),
               style: ElevatedButton.styleFrom(
                   foregroundColor: Colors.white,
-                  backgroundColor: Color(0xFF77B60B)),
+                  backgroundColor: Appcolors.limegreen),
+              child: const Text("Sure"),
             ),
           ],
         );

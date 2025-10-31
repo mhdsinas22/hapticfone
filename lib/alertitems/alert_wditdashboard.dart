@@ -1,5 +1,6 @@
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
+import 'package:haptic_fone/core/const/appcolors.dart';
 import 'package:haptic_fone/database/db_stockitems.dart';
 import 'package:haptic_fone/dropdownitems/items_brand.dart';
 import 'package:haptic_fone/dropdownitems/items_condtion.dart';
@@ -13,7 +14,7 @@ void editdashboard(BuildContext context, int index, Function setState,
   final puschaeamount = TextEditingController(text: current.saleHiveprice);
   final modelcontroller = TextEditingController(text: current.saleHivemodel);
   final colorcontroller = TextEditingController(text: current.saleHiveColor);
-  final Stroagecontoller = TextEditingController(text: current.saleHiveStroage);
+  final stroagecontoller = TextEditingController(text: current.saleHiveStroage);
   final itemcountcontroller =
       TextEditingController(text: current.saleHiveitemcount);
   final perpricecontroller = TextEditingController(text: current.saleHiveprice);
@@ -84,7 +85,7 @@ void editdashboard(BuildContext context, int index, Function setState,
                                           Icons.insert_photo,
                                           size: 50,
                                         )),
-                                    Text(
+                                    const Text(
                                       "Add image",
                                       style: TextStyle(
                                           fontWeight: FontWeight.bold),
@@ -96,31 +97,28 @@ void editdashboard(BuildContext context, int index, Function setState,
                 ),
                 Padding(
                   padding: const EdgeInsets.all(10.0),
-                  child: Container(
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Container(
-                          child: DropdownButtonFormField<String>(
-                        value: itemsbrands.contains(updatedbrand)
-                            ? updatedbrand
-                            : null,
-                        items: itemsbrands.map((String value) {
-                          return DropdownMenuItem(
-                              value: value, child: Text(value));
-                        }).toList(),
-                        onChanged: (String? newvalue) {
-                          setState(() {
-                            updatedbrand = newvalue!;
-                          });
-                        },
-                        dropdownColor: Colors.white,
-                        focusColor: Colors.white,
-                        decoration: InputDecoration(
-                            enabledBorder: OutlineInputBorder(),
-                            labelText: "Select the Brand",
-                            labelStyle: TextStyle(color: Colors.black),
-                            focusedBorder: OutlineInputBorder()),
-                      )),
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: DropdownButtonFormField<String>(
+                      value: itemsbrands.contains(updatedbrand)
+                          ? updatedbrand
+                          : null,
+                      items: itemsbrands.map((String value) {
+                        return DropdownMenuItem(
+                            value: value, child: Text(value));
+                      }).toList(),
+                      onChanged: (String? newvalue) {
+                        setState(() {
+                          updatedbrand = newvalue!;
+                        });
+                      },
+                      dropdownColor: Colors.white,
+                      focusColor: Colors.white,
+                      decoration: const InputDecoration(
+                          enabledBorder: OutlineInputBorder(),
+                          labelText: "Select the Brand",
+                          labelStyle: TextStyle(color: Colors.black),
+                          focusedBorder: OutlineInputBorder()),
                     ),
                   ),
                 ),
@@ -136,7 +134,7 @@ void editdashboard(BuildContext context, int index, Function setState,
                     child: DropdownButtonFormField<String>(
                       dropdownColor: Colors.white,
                       focusColor: Colors.white,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                           enabledBorder: OutlineInputBorder(),
                           labelText: "Select the Condtion",
                           labelStyle: TextStyle(color: Colors.black),
@@ -157,7 +155,7 @@ void editdashboard(BuildContext context, int index, Function setState,
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Textformfiledforadd(
-                    controller1: Stroagecontoller,
+                    controller1: stroagecontoller,
                     hint: "Enter the Storage name",
                   ),
                 ),
@@ -172,7 +170,7 @@ void editdashboard(BuildContext context, int index, Function setState,
                   children: [
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Container(
+                      child: SizedBox(
                         width: 110,
                         height: 50,
                         child: Expanded(
@@ -187,12 +185,12 @@ void editdashboard(BuildContext context, int index, Function setState,
                         )),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Container(
+                      child: SizedBox(
                         width: 100,
                         height: 50,
                         child: Expanded(
@@ -217,10 +215,10 @@ void editdashboard(BuildContext context, int index, Function setState,
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: Text("Cancl"),
               style: ElevatedButton.styleFrom(
                   foregroundColor: Colors.white,
-                  backgroundColor: Color(0xFF77B60B)),
+                  backgroundColor: Appcolors.limegreen),
+              child: const Text("Cancel"),
             ),
             ElevatedButton(
               onPressed: () {
@@ -234,7 +232,7 @@ void editdashboard(BuildContext context, int index, Function setState,
                       saleHivebrand: updatedbrand,
                       saleHivemodel: modelcontroller.text,
                       saleHiveColor: colorcontroller.text,
-                      saleHiveStroage: Stroagecontoller.text,
+                      saleHiveStroage: stroagecontoller.text,
                       saleHiveCondtion: updatedcondtion,
                       saleHiveitemcount: itemcountcontroller.text,
                       saleHiveprice: perpricecontroller.text,
@@ -253,7 +251,7 @@ void editdashboard(BuildContext context, int index, Function setState,
                           hivebrand: updatedbrand,
                           hivemodel: modelcontroller.text,
                           hivecolor: colorcontroller.text,
-                          hivestorage: Stroagecontoller.text,
+                          hivestorage: stroagecontoller.text,
                           hivecondtion: updatedcondtion,
                           hiveitemcount: itemcountcontroller.text,
                           hiveprice: perpricecontroller.text,
@@ -261,10 +259,10 @@ void editdashboard(BuildContext context, int index, Function setState,
                 });
                 Navigator.of(context).pop();
               },
-              child: Text("Edit"),
               style: ElevatedButton.styleFrom(
                   foregroundColor: Colors.white,
-                  backgroundColor: Color(0xFF77B60B)),
+                  backgroundColor: Appcolors.limegreen),
+              child: const Text("Edit"),
             )
           ],
         );

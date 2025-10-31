@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:haptic_fone/outofStock/nofications.dart';
 
@@ -19,7 +18,7 @@ class ProfileSection extends StatelessWidget {
                   fetchaccountdata[0].createimg != null &&
                   fetchaccountdata[0].createimg.isNotEmpty
               ? MemoryImage((fetchaccountdata[0].createimg)) // Local file image
-              : AssetImage("assets/3.png")
+              : const AssetImage("assets/3.png")
                   as ImageProvider, // Fallback asset image
         ),
         SizedBox(width: screenWidth * 0.02),
@@ -53,8 +52,8 @@ class ProfileSection extends StatelessWidget {
           height: screenWidth * 0.1,
           child: IconButton(
             onPressed: () {
-              Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => notifcation()));
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => const notifcation()));
             },
             icon: Icon(Icons.notifications,
                 color: Colors.white, size: screenWidth * 0.05),

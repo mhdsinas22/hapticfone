@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'dart:developer';
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
@@ -60,7 +62,6 @@ class SetReady {
       item: saleitu,
       emplyename: emplyename,
       onAddSale: onAddSale,
-      // ignore: use_build_context_synchronously
       context: context,
     );
     // Iterate through each sale item

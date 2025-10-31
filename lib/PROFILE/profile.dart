@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:haptic_fone/alertitems/privayandalert.dart';
 import 'package:haptic_fone/alertitems/return_alert.dart';
@@ -214,7 +213,7 @@ class _ProfileState extends State<Profile> {
               title: "Privacy & Policy",
               subtitle: "Entry for only stock updating",
               onTap: () {
-                Pricvay(context);
+                Privacy(context);
               },
             ),
             const Divider(color: Color(0xFFD9D9D9), thickness: 1),

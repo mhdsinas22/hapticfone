@@ -14,7 +14,7 @@ class Bottomuser extends StatefulWidget {
 class _BottomuserState extends State<Bottomuser> {
   late int selectindex;
 
-  static List<Widget> items = [Home(), Dashbord(), Profile()];
+  static List<Widget> items = [Home(), const Dashbord(), const Profile()];
   void fu(int index) {
     setState(() {
       selectindex = index;
@@ -39,11 +39,11 @@ class _BottomuserState extends State<Bottomuser> {
           currentIndex: selectindex,
           onTap: fu,
           backgroundColor: Colors.white,
-          selectedItemColor: Color(0xFF75B809),
+          selectedItemColor: const Color(0xFF75B809),
           unselectedItemColor: Colors.black,
-          selectedLabelStyle: TextStyle(fontWeight: FontWeight.bold),
-          unselectedLabelStyle: TextStyle(),
-          items: <BottomNavigationBarItem>[
+          selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
+          unselectedLabelStyle: const TextStyle(),
+          items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(
                 Icons.home,

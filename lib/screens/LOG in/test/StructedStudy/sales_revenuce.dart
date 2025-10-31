@@ -160,7 +160,7 @@ class _SalesRevenueState extends State<SalesRevenue> {
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
             filteredSalesData.isEmpty
-                ? Center(
+                ? const Center(
                     child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

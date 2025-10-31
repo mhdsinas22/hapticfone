@@ -1,11 +1,10 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:haptic_fone/database/db_stockitems.dart';
 
 class OutOfStockCard extends StatelessWidget {
   final StockItems item;
 
-  const OutOfStockCard({Key? key, required this.item}) : super(key: key);
+  const OutOfStockCard({super.key, required this.item});
 
   @override
   Widget build(BuildContext context) {

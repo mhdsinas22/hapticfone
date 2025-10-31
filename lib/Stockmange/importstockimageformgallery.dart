@@ -10,6 +10,6 @@ class ImageGaleery extends StatefulWidget {
 class _ImageGaleeryState extends State<ImageGaleery> {
   @override
   Widget build(BuildContext context) {
-    return Placeholder();
+    return const Placeholder();
   }
 }

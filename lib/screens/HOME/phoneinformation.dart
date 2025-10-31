@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:haptic_fone/database/db_stockitems.dart';
@@ -58,8 +57,8 @@ class _PhoneinformationState extends State<Phoneinformation> {
 
   TextEditingController serachcontroller = TextEditingController();
   String serach = '';
+  @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     fetchhomedata();
     serachcontroller.addListener(() {

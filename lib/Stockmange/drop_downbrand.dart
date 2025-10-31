@@ -22,7 +22,7 @@ class _DropdownbrandState extends State<Dropdownbrand> {
     return DropdownButtonFormField<String>(
         dropdownColor: Colors.white,
         focusColor: Colors.white,
-        decoration: InputDecoration(
+        decoration: const InputDecoration(
             enabledBorder: OutlineInputBorder(),
             labelText: "Select the brand",
             labelStyle: TextStyle(color: Colors.black),

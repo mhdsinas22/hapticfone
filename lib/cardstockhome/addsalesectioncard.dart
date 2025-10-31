@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
 
 class AddSaleitems extends StatelessWidget {
@@ -10,7 +9,7 @@ class AddSaleitems extends StatelessWidget {
 
   final VoidCallback ondltsale;
   final VoidCallback oneditsale;
-  AddSaleitems({
+  const AddSaleitems({
     super.key,
     required this.ondltsale,
     required this.oneditsale,

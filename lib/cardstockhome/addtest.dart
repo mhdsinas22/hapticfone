@@ -7,7 +7,7 @@ class AddTest extends StatelessWidget {
 
   final VoidCallback ondltsale;
   final VoidCallback oneditsale;
-  AddTest(
+  const AddTest(
       {super.key,
       required this.ondltsale,
       required this.oneditsale,

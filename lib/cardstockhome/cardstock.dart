@@ -1,5 +1,3 @@
-import 'dart:io';
-import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:haptic_fone/database/db_stockitems.dart';
 
@@ -26,10 +24,10 @@ class CardStockHome extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: stock.hiveimg != null
+                  // ignore: unrelated_type_equality_checks
+                  child: stock.hiveimg != ""
                       ? Image.memory(
-                          stock.hiveimg
-                              as Uint8List, // Use Image.memory for Uint8List
+                          stock.hiveimg, // Use Image.memory for Uint8List
                           width: 100,
                           height: 100,
                           fit: BoxFit.cover,
